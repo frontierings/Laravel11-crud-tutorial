@@ -8,9 +8,12 @@ This CRUD application is aimed to introduce students to web development using La
  - Tailwindcss for styling
 
  ## How to configure
- - After cloning the project, run 
+ - After cloning the project, run the following commands:
     ```
     composer install
+    ```
+    ```
+    php artisan migrate
     ```
  - Run <a href="https://tailwindcss.com/docs/guides/laravel"> Tailwindcss</a> commands:
     ```

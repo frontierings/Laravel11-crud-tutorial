@@ -24,11 +24,11 @@
                 <div class="flex">
                     <div class="w-44">
                         <ul>
-                            <li><a href="{{route('product.index')}}" class="block p-5 font-bold bg-slate-200">Products</a></li>
-                            <li><a href="#" class="block p-5 font-bold bg-slate-200">Users</a></li>
-                            <li><a href="#" class="block p-5 font-bold bg-slate-200">Setting</a></li>
+                            <li><a href="{{route('product.index')}}" class="block p-5 font-bold bg-slate-200">{{__('Products')}}</a></li>
+                            <li><a href="#" class="block p-5 font-bold text-slate-500 bg-slate-200">{{__('Users')}}</a></li>
+                            <li><a href="#" class="block p-5 font-bold text-slate-500 bg-slate-200">{{__('Settings')}}</a></li>
                             <li class="p-5 bg-slate-200">
-                                <a href="lang/fa" class="inline-block px-2 py-1 m-1 bg-white border-b-4 border-orange-500 hover:bg-orange-50 hover:text-orange-500 transition-all">Da</a>
+                                <a href="lang/fa" class="inline-block px-2 py-1 m-1 bg-white border-b-4 border-orange-500 hover:bg-orange-50 hover:text-orange-500 transition-all">Fa</a>
                                 <a href="lang/ps" class="inline-block px-2 py-1 m-1 bg-white border-b-4 border-orange-500 hover:bg-orange-50 hover:text-orange-500 transition-all">Ps</a>
                                 <a href="lang/en" class="inline-block px-2 py-1 m-1 bg-white border-b-4 border-orange-500 hover:bg-orange-50 hover:text-orange-500 transition-all">En</a>
                             </li>

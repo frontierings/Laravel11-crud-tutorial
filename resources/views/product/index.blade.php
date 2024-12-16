@@ -3,7 +3,7 @@
 <div class="w-full mx-auto p-5 bg-slate-100">
 
 <x-slot name="header">
-    <h1 class="text-2xl font-bold text-sky-900">Product</h1>
+    <h1 class="text-2xl font-bold text-sky-900">{{__('Products')}}</h1>
 </x-slot>
 
 @if(session('message'))

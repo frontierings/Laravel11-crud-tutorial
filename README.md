@@ -8,7 +8,7 @@ This CRUD application is aimed to introduce students to web development using La
  - Tailwindcss for styling
 
  ## How to configure
- - After cloning the project, remove rename the ".env.example" file to ".env", then run the following commands:
+ - After cloning the project, rename the ".env.example" file to ".env", then run the following commands:
 
     ```
     composer install

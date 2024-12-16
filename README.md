@@ -2,7 +2,20 @@
 
 # Laravel CRUD applicaion
 This CRUD application is aimed to introduce students to web development using Laravel 11.
-# Features:
-# Multi Language: English, Persian/Dari, and Pashto
-# Breeze authentication
-# Tailwindcss for styling
+## Features:
+ - Multi Language: English, Persian/Dari, and Pashto
+ - Breeze authentication
+ - Tailwindcss for styling
+
+ ## How to configure
+ - After cloning the project, run 
+    ```
+    composer install
+    ```
+ - Run <a href="https://tailwindcss.com/docs/guides/laravel"> Tailwindcss</a> commands:
+    ```
+    npm install -D tailwindcss postcss autoprefixer
+    ```
+    ```
+    npx tailwindcss init -p
+    ```

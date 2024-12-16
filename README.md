@@ -9,6 +9,7 @@ This CRUD application is aimed to introduce students to web development using La
 
  ## How to configure
  - After cloning the project, run the following commands:
+
     ```
     composer install
     ```
@@ -16,6 +17,7 @@ This CRUD application is aimed to introduce students to web development using La
     php artisan migrate
     ```
  - Run <a href="https://tailwindcss.com/docs/guides/laravel"> Tailwindcss</a> commands:
+ 
     ```
     npm install -D tailwindcss postcss autoprefixer
     ```

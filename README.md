@@ -3,7 +3,10 @@
 # Laravel CRUD application
 This CRUD application is aimed to introduce students to web development using Laravel 11.
 ## Features:
- - Multi Language: English, Persian/Dari, and Pashto
+ - Multi Language:
+   - Persian/Dari
+   - Pashto
+   - English
  - Breeze authentication
  - Tailwindcss for styling
 

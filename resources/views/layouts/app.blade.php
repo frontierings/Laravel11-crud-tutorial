@@ -25,7 +25,7 @@
                     <div class="w-44">
                         <ul>
                             <li><a href="{{route('product.index')}}" class="block p-5 font-bold bg-slate-100">{{__('Products')}}</a></li>
-                            <li><a href="#" class="block p-5 font-bold text-slate-500 bg-slate-100">{{__('Users')}}</a></li>
+                            <li><a href="{{route('user.index')}}" class="block p-5 font-bold bg-slate-100">{{__('Users')}}</a></li>
                             <li><a href="#" class="block p-5 font-bold text-slate-500 bg-slate-100">{{__('Settings')}}</a></li>
                             <li class="p-5 bg-slate-100">
                                 <a href="lang/fa" class="inline-block px-2 py-1 m-1 bg-white border-b-4 border-orange-500 hover:bg-orange-50 hover:text-orange-500 transition-all">Fa</a>
@@ -38,7 +38,7 @@
                         <!-- Page Heading -->
                         @isset($header)
                             <header class="bg-white shadow">
-                                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                                <div class="max-w-7xl mx-auto py-3 text-center">
                                     {{ $header }}
                                 </div>
                             </header>

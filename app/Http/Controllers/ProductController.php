@@ -12,7 +12,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::with('user')->get();
         return view('product.index')
                 ->with('products',$products);
     }
@@ -32,6 +32,7 @@ class ProductController extends Controller
     {
         //dd($request);
         $p = new Product;
+        $p->user_id = auth()->user()->id;
         $p->name = $request->name;
         $p->description = $request->description;
         $p->price = $request->price;
@@ -89,12 +90,17 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //dd($id);
-        Product::destroy($id);
+        if(auth()->user()->id == Product::find($id)->user_id){
+            Product::destroy($id);
 
-        // $p = Product::find($id);
-        // $p->delete();
-        return redirect()->route('product.index')
+            // $p = Product::find($id);
+            // $p->delete();
+            return redirect()->route('product.index')
                 ->with('message','Deleted successfuly.');
+        }
+        
+        return redirect()->route('product.index')
+        ->with('message','You cannot delete this product.');
+        
     }
 }

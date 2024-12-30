@@ -13,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return response()->json(Product::all());
+        return response()->json(Product::with('user')->get());
     }
 
     /**
@@ -21,10 +21,18 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $p = new Product;
+        $p->user_id = auth()->user()->id;
+        $p->name = $request->name;
+        $p->description = $request->description;
+        $p->price = $request->price;
+        $p->stock = $request->stock;
+        if($request->photo){
+            $p->photo = $request->photo->store('product','public');
+        }
+        $p->save();
 
-        $product = Product::create($request->all());
-
-        return response()->json($product, 201);
+        return response()->json($p, 201);
     }
 
     /**
@@ -51,8 +59,14 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        Product::destroy($id);
+        if(auth()->user()->id == Product::find($id)->user_id){
 
-        return response()->json(null, 204);
+            Product::destroy($id);
+
+            return response()->json(null, 204);
+        }
+
+        return response()->json(['error' => 'Unauthorized'], 401);
+        
     }
 }

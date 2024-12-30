@@ -15,6 +15,17 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('product.index')" :active="request()->routeIs('product.index')">
+                        {{ __('Products') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                        {{ __('Users') }}
+                    </x-nav-link>
+                    <p class="p-2">
+                                <a href="lang/fa" class="inline-block px-2 py-1 m-1 bg-white border-b-4 border-orange-500 hover:bg-orange-50 hover:text-orange-500 transition-all">Fa</a>
+                                <a href="lang/ps" class="inline-block px-2 py-1 m-1 bg-white border-b-4 border-orange-500 hover:bg-orange-50 hover:text-orange-500 transition-all">Ps</a>
+                                <a href="lang/en" class="inline-block px-2 py-1 m-1 bg-white border-b-4 border-orange-500 hover:bg-orange-50 hover:text-orange-500 transition-all">En</a>
+                    </p>
                 </div>
             </div>
 

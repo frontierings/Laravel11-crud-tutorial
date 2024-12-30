@@ -12,33 +12,37 @@
 
 <a class="inline-block px-3 py-1 text-green-700 bg-green-200 hover:bg-green-300 font-bold my-3" href="{{route('product.create')}}">Create new product</a>
 
-<table class="w-full">
-    <tr>
-        <th class="p-3 border-2 border-slate-300">{{__('Photo')}}</th>
-        <th class="p-3 border-2 border-slate-300">{{__('Name')}}</th>
-        <th class="p-3 border-2 border-slate-300">{{__('Description')}}</th>
-        <th class="p-3 border-2 border-slate-300">{{__('Price')}}</th>
-        <th class="p-3 border-2 border-slate-300">{{__('Stock')}}</th>
-        <th class="p-3 border-2 border-slate-300">{{__('Actions')}}</th>
-    </tr>
-@foreach($products as $p)
-    <tr class="odd:bg-white even:bg-slate-50 hover:bg-slate-200">
-        <td class="p-1 border-2 border-slate-300"><img src="{{url('storage/'.$p->photo)}}" class="h-10" alt=""></td>
-        <td class="p-1 border-2 border-slate-300">{{$p->name}}</td>
-        <td class="p-1 border-2 border-slate-300">{{$p->description}}</td>
-        <td class="p-1 border-2 border-slate-300">$ {{$p->price}}</td>
-        <td class="p-1 border-2 border-slate-300">{{$p->stock}}</td>
-        <td class="p-1 border-2 border-slate-300">
-            <a class="bg-sky-500 text-blue-200 inline-block hover:text-white px-3 py-1" href="{{route('product.edit',$p->id)}}">{{__('Edit')}}</a>
-            <form class="inline-block" onsubmit="return confirm('Are you sure to delete?')" action="{{route('product.destroy',$p->id)}}" method="post">
-                @csrf
-                @method('DELETE')
-                <input class="bg-red-300 text-red-900 px-2 py-1 ml-1 hover:bg-red-400" type="submit" value="{{__('Delete')}}">
-            </form>
-        </td>
-    </tr>
-@endforeach
-</table>
+<div class="w-full p-3 flex flex-wrap">
+    @foreach($products as $p)
+    <div class="w-72 overflow-hidden m-1 bg-white rounded shadow">
+        <div class="p-2 flex">
+            <img src="" alt="" class="h-10 w-10 rounded-full bg-slate-300 mr-2">
+            <div class="">
+                <p class="font-bold">{{$p->user->name}}</p>
+                <p class="text-[12px] text-slate-500">{{date('h:m A M j, Y',strtotime($p->created_at))}}</p>
+            </div>
+        </div>
+        <img src="{{url('storage/'.$p->photo)}}" alt="" class="h-40 w-full">
+        <div class="p-3">
+            <p class="font-bold py-1">{{$p->name}}</p>
+            <p class="p-1 text-[12px] text-green-700 bg-green-200"><span class="font-bold">{{$p->stock}}</span> left in stock</p>
+            <p class="py-1 text-[14px] text-slate-700">{{$p->description}}</p>
+            <p class="py-1 font-bold text-slate-700">${{$p->price}}</p>
+            @if(auth()->user()->id == $p->user->id)
+                <div class="p-1 flex justify-end">
+                    <a class="bg-sky-500 text-blue-200 inline-block hover:text-white px-2" href="{{route('product.edit',$p->id)}}">{{__('Edit')}}</a>
+                    <form class="inline-block" onsubmit="return confirm('Are you sure to delete?')" action="{{route('product.destroy',$p->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <input class="bg-red-300 text-red-900 px-2 ml-1 hover:bg-red-400" type="submit" value="{{__('Delete')}}">
+                    </form>
+                </div>
+            @endif
+        </div>
+    </div>
+    @endforeach
+</div>
+
 
 </div>
 

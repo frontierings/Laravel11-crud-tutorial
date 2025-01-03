@@ -35,7 +35,7 @@
                         {{ $slot }}
                     </div>
                 </div>
-                <div class="p-10 mt-10 text-center bg-slate-300 text-slate-700">&copy; copy 2024</div>
+                <div class="p-10 mt-10 text-center bg-slate-300 text-slate-700">&copy; copy 2025</div>
             </main>
         </div>
     </body>

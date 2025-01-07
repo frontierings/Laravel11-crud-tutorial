@@ -12,7 +12,7 @@
 
 <a class="inline-block px-3 py-1 text-green-700 bg-green-200 hover:bg-green-300 font-bold my-3" href="{{route('product.create')}}">Create new product</a>
 
-<div class="w-full p-3 flex flex-wrap">
+<div class="w-full p-3 flex flex-wrap justify-center">
     @foreach($products as $p)
     <div class="w-72 overflow-hidden m-1 bg-white rounded shadow">
         <div class="p-2 flex">

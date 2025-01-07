@@ -61,9 +61,9 @@ class ProductController extends Controller
     {
         if(auth()->user()->id == Product::find($id)->user_id){
 
-            Product::destroy($id);
+            $p=Product::destroy($id);
 
-            return response()->json(null, 204);
+            return response()->json($p, 204);
         }
 
         return response()->json(['error' => 'Unauthorized'], 401);
